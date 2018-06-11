@@ -10,7 +10,8 @@ app.get('/',function(req, res) {
 });
 app.use('/client',express.static(__dirname + '/client'));
 
-serv.listen(process.env.PORT);
+// serv.listen(process.env.PORT);
+serv.listen(2000);
 console.log("Server started.");
 
 var SOCKET_LIST = {};
@@ -91,7 +92,7 @@ var Player = function(id){
 		if(self.pressingUp){
 			self.velocity += 0.5;
 			self.coastingAngle = self.shipAngle;
-			// self.angularVelocity = 0;
+			self.angularVelocity = 0;
 
 		}
 
