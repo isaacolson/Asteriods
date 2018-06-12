@@ -1,0 +1,28 @@
+<canvas id="ctx" width="1000" height="525"></canvas>
+
+<script>
+	//Specify coordinates for the center of rectangle
+	var x = 400;
+	var y = 410;
+
+	//Specify size of rectangle
+	var sizeX = 120;
+	var sizeY = 60;
+	
+	//Fectch canvas element
+	var ctx = document.getElementById("ctx").getContext("2d");
+
+	//Draw shape
+	ctx.beginPath();
+
+	//Move to where the shape will start to be drawn
+	ctx.moveTo(x+sizeX/2, y-sizeY/2);
+	//Draw lines to shape corners
+	ctx.lineTo(x+sizeX/2, y+sizeY/2);
+	ctx.lineTo(x-sizeX/2, y+sizeY/2);
+	ctx.lineTo(x-sizeX/2, y-sizeY/2);
+	//Close shape
+	ctx.closePath();
+	//Apply line to shape
+	ctx.stroke();			
+</script>
