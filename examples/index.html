@@ -34,9 +34,31 @@ mem
 			}
 
 			workingArea += ((points[n-1][0])*(points[0][1]))-((points[0][0])*(points[n-1][1]));
-			console.log(workingArea);
+			var calcArea = Math.abs(workingArea)/2;
+			console.log(calcArea);
+			return calcArea;
 		}
-		area();
+		var asteroidArea = area();
+		var CG = function(){
+			var CGx = 0;
+			var CGy = 0;
+			//CGx
+			for(var i = 0; i<n-1; i++){
+				CGx += (points[i][0]+points[i+1][0])*((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
+			} 
+			CGx += (points[0][0]+points[0+1][0])*((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
+			var calcCGx = CGx/(6*asteroidArea);
+			console.log(calcCGx);
+
+			//CGy
+			for(var i = 0; i<n-1; i++){
+				CGy += (points[i][1]+points[i+1][1])*((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
+			}
+			CGy += (points[0][1]+points[0+1][1])*((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
+			var calcCGy = CGy/(6*asteroidArea);
+			console.log(calcCGy);
+		}
+		CG();
 	}
 	
 	poly(100,100,100,12);
