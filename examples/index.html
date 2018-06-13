@@ -28,10 +28,12 @@ mem
 
 		 var area = function(){
 			var workingArea = 0;
-		 	for(var i = 0; i<n; i++){
-				workingArea = ((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
+		 	for(var i = 0; i<n-1; i++){
+				workingArea += ((points[i][0])*(points[i+1][1]))-((points[i+1][0])*(points[i][1]));
 				console.log(workingArea);
-		 	}
+			}
+
+			workingArea += ((points[n-1][0])*(points[0][1]))-((points[0][0])*(points[n-1][1]));
 			console.log(workingArea);
 		}
 		area();
