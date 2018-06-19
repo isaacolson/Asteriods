@@ -1,0 +1,49 @@
+<canvas id="ctx" width="1000" height="1000"></canvas>
+	
+	<script>
+	
+		var shipLength;
+		var Cx, Cy;
+		
+		var L = 200;
+		var Cx = 500;
+		var Cy = 500;
+		
+		var ctx = document.getElementById("ctx").getContext("2d");
+		
+		ctx.beginPath();
+		ctx.moveTo(Cx, Cy);
+		ctx.moveTo(Cx-L/2, Cy);
+		ctx.lineTo(Cx-5*L/14, Cy-L/14);
+		ctx.lineTo(Cx-2*L/7, Cy-L/14);
+		ctx.lineTo(Cx-L/7, Cy-2*L/7);
+		ctx.lineTo(Cx+L/7, Cy-2*L/7);
+		ctx.lineTo(Cx+2*L/7, Cy-L/14);	
+		ctx.lineTo(Cx+5*L/14, Cy-L/14);
+		ctx.lineTo(Cx+L/2, Cy);
+		
+		ctx.lineTo(Cx+5*L/14, Cy+L/14);
+		ctx.lineTo(Cx+2*L/7, Cy+L/14);
+		ctx.lineTo(Cx+L/7, Cy+2*L/7);
+		ctx.lineTo(Cx-L/7, Cy+2*L/7);
+		ctx.lineTo(Cx-2*L/7, Cy+L/14);	
+		ctx.lineTo(Cx-5*L/14, Cy+L/14);		
+		ctx.closePath();
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.moveTo(Cx-L/2, Cy);
+		ctx.lineTo(Cx+L/2, Cy);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.moveTo(Cx-2*L/7, Cy-L/14);
+		ctx.lineTo(Cx+2*L/7, Cy-L/14);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.moveTo(Cx-2*L/7, Cy+L/14);
+		ctx.lineTo(Cx+2*L/7, Cy+L/14);
+		ctx.stroke();
+		
+	</script>
